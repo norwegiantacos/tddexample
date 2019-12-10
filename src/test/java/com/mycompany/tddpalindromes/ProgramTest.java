@@ -100,13 +100,101 @@ public class ProgramTest {
         assertEquals(expected, actual);
     }
     
-    @Test
+    /*@Test
     public void testTwoCharacterPalindrome()
     {
         String input = "aa";
         boolean expected = true;
         
         boolean actual = Program.checkIfPalindrome(input);
+        
+        assertEquals(expected, actual);
+    }*/
+    
+    @Test
+    public void testMakeLowerCaseAlreadyLowerCaseCharacter()
+    {
+        String input = "a";
+        String expected = "a";
+        
+        String actual = Program.makeLowerCase(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testMakeLowerCaseUpperCaseCharacter()
+    {
+        String input = "A";
+        String expected = "a";
+        
+        String actual = Program.makeLowerCase(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testMakeLowerCaseJustPunctuation()
+    {
+        String input = "!";
+        String expected = "!";
+        
+        String actual = Program.makeLowerCase(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testMakeLowerCaseAlreadyLowerCaseSentence()
+    {
+        String input = "hello this is lower case";
+        String expected = "hello this is lower case";
+        
+        String actual = Program.makeLowerCase(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testMakeLowerCaseUpperCaseSentence()
+    {
+        String input = "HELLO THIS IS UPPER CASE";
+        String expected = "hello this is upper case";
+        
+        String actual = Program.makeLowerCase(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testMakeLowerCaseMixedCaseSentence()
+    {
+        String input = "HeLlO tHiS iS mIxEd CaSe";
+        String expected = "hello this is mixed case";
+        
+        String actual = Program.makeLowerCase(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testMakeLowerCaseMixedCaseSentenceWithPunctuation()
+    {
+        String input = "HeLlO__ tHiS iS mIxEd CaSe!!!!";
+        String expected = "hello__ this is mixed case!!!!";
+        
+        String actual = Program.makeLowerCase(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testMakeLowerCaseMixedCaseSentenceWithNumbers()
+    {
+        String input = "HeLlO987 tHiS iS mIxEd CaSe0123";
+        String expected = "hello987 this is mixed case0123";
+        
+        String actual = Program.makeLowerCase(input);
         
         assertEquals(expected, actual);
     }

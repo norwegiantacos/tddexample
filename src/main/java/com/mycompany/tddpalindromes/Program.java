@@ -72,10 +72,24 @@ public class Program
     
     public static String makeLowerCase(String phrase)
     {
+        char[] phraseCharacters = phrase.toCharArray();
+        String lowerCasePhrase = "";
+        
+        for(int i=0;i<phrase.length();i++)
+        {
+            if(phraseCharacters[i] >= 'A' && phraseCharacters[i] <= 'Z')
+            {
+                //This is an upper case character
+                lowerCasePhrase += (char)(phraseCharacters[i] + 32); //static difference between A and a
+            }
+            else
+            {
+                lowerCasePhrase += (char)phraseCharacters[i];
+            }
+        }
         
         
-        
-        return "";
+        return lowerCasePhrase;
     }
     
     public static String removePunctuation(String phrase)
