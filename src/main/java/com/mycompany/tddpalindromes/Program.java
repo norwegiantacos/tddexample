@@ -94,8 +94,35 @@ public class Program
     
     public static String removePunctuation(String phrase)
     {
+        char[] phraseCharacters = phrase.toCharArray();
+        String noPunctuation = "";
+        
+        for(int i=0;i<phrase.length();i++)
+        {
+            if(phraseCharacters[i] >= 'A' && phraseCharacters[i] <= 'Z')
+            {
+                noPunctuation = noPunctuation + phraseCharacters[i];
+            }
+            else if(phraseCharacters[i] >= 'a' && phraseCharacters[i] <= 'z')
+            {
+                noPunctuation = noPunctuation + phraseCharacters[i];
+            }
+            else if(phraseCharacters[i] == ' ')
+            {
+                noPunctuation = noPunctuation + phraseCharacters[i];
+            }
+            else if(phraseCharacters[i] >= '0' && phraseCharacters[i] <= '9')
+            {
+                noPunctuation = noPunctuation + phraseCharacters[i];
+            }
+            
+            
+            
+             
+        }
         
         
-        return "";
+        
+        return noPunctuation;
     }
 }

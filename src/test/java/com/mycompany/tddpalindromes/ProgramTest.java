@@ -198,10 +198,82 @@ public class ProgramTest {
         
         assertEquals(expected, actual);
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    ////////////////////////////////////////////////////////////////
+    @Test
+    public void testRemovePunctuationWhenNoPunctuation()
+    {
+        String input = "hello";
+        String expected = "hello";
+        
+        String actual = Program.removePunctuation(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testRemovePunctuationWhenOnePunctuation()
+    {
+        String input = "!";
+        String expected = "";
+        
+        String actual = Program.removePunctuation(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testRemovePunctuationWhenOnlyPunctuation()
+    {
+        String input = "!!!][]'#";
+        String expected = "";
+        
+        String actual = Program.removePunctuation(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testRemovePunctuationWhenMixedLowercaseLettersAndPunctuation()
+    {
+        String input = "hello, it's me";
+        String expected = "hello its me";
+        
+        String actual = Program.removePunctuation(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testRemovePunctuationWhenMixedCaseLettersAndPunctuation()
+    {
+        String input = "Hello, it's me, Toby!";
+        String expected = "Hello its me Toby";
+        
+        String actual = Program.removePunctuation(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testRemovePunctuationWhenNumbersAndPunctuation()
+    {
+        String input = "1!2!3!4!5!6!";
+        String expected = "123456";
+        
+        String actual = Program.removePunctuation(input);
+        
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void testRemovePunctuationWhenEmptyString()
+    {
+        String input = "";
+        String expected = "";
+        
+        String actual = Program.removePunctuation(input);
+        
+        assertEquals(expected, actual);
+    }
+    
 }
