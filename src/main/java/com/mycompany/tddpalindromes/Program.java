@@ -116,13 +116,12 @@ public class Program
                 noPunctuation = noPunctuation + phraseCharacters[i];
             }
             
-            
-            
-             
         }
         
         
         
         return noPunctuation;
     }
+    
+    
 }
